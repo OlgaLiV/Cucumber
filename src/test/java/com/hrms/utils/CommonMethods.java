@@ -14,7 +14,6 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
-
 import com.hrms.testbase.BaseClass;
 import com.hrms.testbase.PageInitializer;
 
@@ -124,31 +123,31 @@ public class CommonMethods extends PageInitializer {
 //
 //		}
 //	}
-	
+
 	/**
 	 * Method that create a screenshot and store it in specif
+	 * 
 	 * @param fileName
 	 */
-	public static void takeScreen(String fileName) {
-		TakesScreenshot ts = (TakesScreenshot)driver;
-		
+	public static byte[] takeScreen(String fileName) {
+		TakesScreenshot ts = (TakesScreenshot) driver;
+		byte[] bytes = ts.getScreenshotAs(OutputType.BYTES);
 		File file = ts.getScreenshotAs(OutputType.FILE);
 		
+
 		try {
-			FileUtils.copyFile(file,new File (Constants.SCREENSHOT_FILE_PATH + fileName + getTimeStamp() + ".png"));
+			FileUtils.copyFile(file, new File(Constants.SCREENSHOT_FILE_PATH + fileName + getTimeStamp() + ".png"));
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
-		
-		
+		return bytes;
 	}
-	
-public static String getTimeStamp() {
-		
-		Date date = new Date();		
+
+	public static String getTimeStamp() {
+
+		Date date = new Date();
 		SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd_HH_mm_ss");
 		return sdf.format(date);
-		
-		
+
 	}
 }
