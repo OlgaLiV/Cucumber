@@ -18,14 +18,27 @@ Feature: Adding Employee
     When enter first name as "Anna" middle name "Can" and last name as "Karenina"
     And verify that "Anna Can Karenina" is added successfully
 
-	@examples
+  @examples
   Scenario Outline: Adding multiple employees without login details
     When enter employee "<First Name>", "<Middle Name>" and "<Last Name>"
     And verify that "<First Name>", "<Middle Name>" and "<Last Name>" is successfully added
 
     Examples: 
       | First Name | Middle Name | Last Name |
-      | Mark       | J           | Smithy     |
-      | Hunter     | ABC         | Musoevy    |
-      | John       | M           | Wicky      |
-      | John       | F           | kennedyy   |
+      | Mark       | J           | Smithy    |
+      | Hunter     | ABC         | Musoevy   |
+      | John       | M           | Wicky     |
+      | John       | F           | kennedyy  |
+
+  @dtWithHeader
+  Scenario: Adding multiple employees at one execution
+    When add mltiple employees and verify they are added
+      | First Name | Middle Name | Last Name | Employee ID |
+      | Mark       | J           | Smith     | rfaeryuk    |
+      | Hunter     | ABC         | Musoev    | yuatgoss    |
+      | John       | M           | Wick      | vvbajhd     |
+      | John       | F           | kennedy   | mlojagkfds  |
+
+  @excelTask
+  Scenario: Adding multiple employees from excel file
+    When add multiple employees from "Sheet1" verify they are addes successfully

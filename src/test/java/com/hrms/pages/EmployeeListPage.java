@@ -16,6 +16,35 @@ public class EmployeeListPage extends BaseClass{
 	@FindBy(linkText = "Next")
 	public WebElement nextBtn;
 	
+	@FindBy(id = "empsearch_id")
+	public WebElement empSearchById;
+	
+	@FindBy (id = "empsearch_employee_name_empName")
+	public WebElement empSearchByName;
+	
+	@FindBy(id = "searchBtn")
+	public WebElement searchButton;
+	
+	@FindBy(xpath = "//input[@name = 'chkSelectRow[]']")
+	public WebElement checkbox;
+	
+	@FindBy(xpath = "//table[@id = 'resultTable']/tbody/tr/td[3]")
+	public WebElement firstNameInTable;
+	
+	@FindBy(xpath = "//table[@id = 'resultTable']/tbody/tr/td[4]")
+	public WebElement lastNameInTable;
+	
+	@FindBy(xpath = "//table[@id = 'resultTable']/tbody/tr/td[2]")
+	public WebElement idInTable;
+	
+	@FindBy(id = "btnDelete")
+	public WebElement deleteButton;
+	
+	@FindBy (id = "dialogDeleteBtn")
+	public WebElement confirmDeleteBtn;
+	
+	
+	
 	public EmployeeListPage() {
 		PageFactory.initElements(driver, this);
 	}

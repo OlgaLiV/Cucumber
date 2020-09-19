@@ -7,15 +7,15 @@ import io.cucumber.junit.CucumberOptions;
 
 @RunWith(Cucumber.class)	// path to our feature file							//path to our actual test(stepDefinitions package)
 @CucumberOptions(features = "src/test/resources/features/", glue = "com/hrms/stepDefinitions",
-dryRun = false, // if true runs over the feature steps and identify the missing implementation
-monochrome = true,// clean output in console
-tags = "@dash",// execute scenarios that tagged
-strict = false,// when set as true will fail execution when underfined step is found
-plugin = {"pretty", // pretty - print out steps in console		
-		"html:target/cucumber-default-reports" ,//generate default html report
-		"rerun:target/FailedTests.txt", // generate txt file only with failed tests
-		"json:target/cucumber.json" // generates json reports
-		}) 
+						dryRun = false, // if true runs over the feature steps and identify the missing implementation
+						monochrome = true,// clean output in console
+						tags = "@deleteEmployeesUsingExcel",// execute scenarios that tagged
+						strict = false,// when set as true will fail execution when underfined step is found
+						plugin = {"pretty", // pretty - print out steps in console		
+								"html:target/cucumber-default-reports" ,//generate default html report
+								"rerun:target/FailedTests.txt", // generate txt file only with failed tests
+								"json:target/cucumber.json" // generates json reports
+								}) 
 
 
 public class TestRunner {
