@@ -13,6 +13,9 @@ public class EmployeeListPage extends BaseClass{
 	@FindBy(xpath = "//table[@id = 'resultTable']/tbody/tr/td")
 	public List<WebElement> table;
 	
+	@FindBy(xpath = "//table[@id = 'resultTable']/tbody/tr/td[2]")
+	public List<WebElement> idList;
+	
 	@FindBy(linkText = "Next")
 	public WebElement nextBtn;
 	
@@ -42,6 +45,8 @@ public class EmployeeListPage extends BaseClass{
 	
 	@FindBy (id = "dialogDeleteBtn")
 	public WebElement confirmDeleteBtn;
+	
+	
 	
 	
 	

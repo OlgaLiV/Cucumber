@@ -8,11 +8,14 @@ import java.util.List;
 import java.util.Set;
 
 import org.apache.commons.io.FileUtils;
+import org.openqa.selenium.Alert;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.NoSuchFrameException;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
+import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.UnexpectedTagNameException;
@@ -258,5 +261,25 @@ public class CommonMethods extends PageInitializer {
 			}
 		}
 	}
+	
+	/**
+	 * method that handling simple alert
+	 */
+	public static void simpleAlert(WebDriver driver) {
+		Alert alert = driver.switchTo().alert();
+		alert.accept();
+	}
+	
+	/**
+	 * method hover on webelement
+	 * @param driver
+	 * @param element
+	 */
+	public static void hoverUsingAction(WebDriver driver, WebElement element) {
+		Actions action = new Actions(driver);
+		action.moveToElement(element).perform();
+	}
+	
+	
 
 }

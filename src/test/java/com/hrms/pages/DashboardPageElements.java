@@ -37,8 +37,17 @@ public class DashboardPageElements extends BaseClass{
 	@FindBy(id = "welcome")
 	public WebElement welcomeMsg;
 	
+	@FindBy(id = "menu_admin_Qualifications")
+	public WebElement qualifications;
+	
+	@FindBy(id = "menu_admin_viewSkills")
+	public WebElement skillsBtn;
+		
 	@FindBy(xpath = "//div[@class = 'menu']/ul/li")
 	public List<WebElement> dashTabs;
+	
+	@FindBy(xpath = "//table[@id = 'recordsListTable']/tbody/tr/td")
+	public List<WebElement> recordListTable;
 	
 	
 	

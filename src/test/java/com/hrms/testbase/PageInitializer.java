@@ -2,10 +2,12 @@ package com.hrms.testbase;
 
 import com.hrms.pages.AddEmployeePageElements;
 import com.hrms.pages.DashboardPageElements;
+import com.hrms.pages.EmergencyContactsPage;
 import com.hrms.pages.EmployeeListPage;
 import com.hrms.pages.LoginPageElements;
 import com.hrms.pages.PersonalDetalesPage;
 import com.hrms.pages.PimPage;
+import com.hrms.pages.SkillsPageElements;
 
 public class PageInitializer extends BaseClass {
 	protected static LoginPageElements login;
@@ -14,6 +16,9 @@ public class PageInitializer extends BaseClass {
 	protected static PimPage pim;
 	protected static PersonalDetalesPage personalPage;
 	protected static EmployeeListPage empList;
+	protected static EmergencyContactsPage emgCont;
+	protected static SkillsPageElements skillsPage;
+	
 
 	public static void initializePageObjects() {
 
@@ -23,6 +28,8 @@ public class PageInitializer extends BaseClass {
 		pim = new PimPage();
 		personalPage = new PersonalDetalesPage();
 		empList = new EmployeeListPage();
+		emgCont = new EmergencyContactsPage();
+		skillsPage = new SkillsPageElements();
 	}
 
 }

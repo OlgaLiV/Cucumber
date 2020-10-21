@@ -11,6 +11,11 @@ public class PersonalDetalesPage extends BaseClass{
 	@FindBy(xpath = "//div[@id = 'profile-pic' ]/h1")
 	public WebElement profilePictureText;
 	
+	@FindBy(xpath = "//a[text() = 'Emergency Contacts']")
+	public WebElement emergencyContactsBtn;
+	
+	
+	
 
 	public PersonalDetalesPage() {
 		PageFactory.initElements(driver, this);

@@ -9,7 +9,7 @@ import io.cucumber.junit.CucumberOptions;
 @CucumberOptions(features = "src/test/resources/features/", glue = "com/hrms/stepDefinitions",
 						dryRun = false, // if true runs over the feature steps and identify the missing implementation
 						monochrome = true,// clean output in console
-						tags = "@deleteEmployeesUsingExcel",// execute scenarios that tagged
+						tags = "@addSkills",// execute scenarios that tagged
 						strict = false,// when set as true will fail execution when underfined step is found
 						plugin = {"pretty", // pretty - print out steps in console		
 								"html:target/cucumber-default-reports" ,//generate default html report
