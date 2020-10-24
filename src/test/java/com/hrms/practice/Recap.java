@@ -39,6 +39,11 @@ public class Recap {
 			String name = rs.getObject("name").toString();
 			System.out.println(id + " = " + name);
 		}
+		rs.close();
+		st.close();
+		conn.close();
+
 	}
+	
 
 }

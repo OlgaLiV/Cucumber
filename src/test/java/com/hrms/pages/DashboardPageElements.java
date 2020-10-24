@@ -34,6 +34,12 @@ public class DashboardPageElements extends BaseClass{
 	@FindBy(id = "menu_pim_viewEmployeeList")
 	public WebElement empListBtn;
 	
+	@FindBy(id = "menu_admin_Job")
+	public WebElement jobLinkBtn;
+	
+	@FindBy(id = "menu_admin_viewJobTitleList")
+	public WebElement jobTitleBtn;
+	
 	@FindBy(id = "welcome")
 	public WebElement welcomeMsg;
 	

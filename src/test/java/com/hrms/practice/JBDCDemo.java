@@ -54,6 +54,10 @@ public class JBDCDemo {
 		for (String nat : nationalities) {
 			System.out.println(nat);
 		}
+		rs.close();
+		st.close();
+		conn.close();
+
 
 	}
 

@@ -1,6 +1,9 @@
 package com.hrms.pages;
 
+import java.util.ArrayList;
+import java.util.LinkedHashMap;
 import java.util.List;
+import java.util.Map;
 
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -32,7 +35,7 @@ public class EmployeeListPage extends BaseClass{
 	public WebElement checkbox;
 	
 	@FindBy(xpath = "//table[@id = 'resultTable']/tbody/tr/td[3]")
-	public WebElement firstNameInTable;
+	public List<WebElement> firstNameInTable;
 	
 	@FindBy(xpath = "//table[@id = 'resultTable']/tbody/tr/td[4]")
 	public WebElement lastNameInTable;
@@ -40,15 +43,30 @@ public class EmployeeListPage extends BaseClass{
 	@FindBy(xpath = "//table[@id = 'resultTable']/tbody/tr/td[2]")
 	public WebElement idInTable;
 	
+	@FindBy(xpath = "//table[@id = 'resultTable']")
+	public WebElement resultTable;
+	
 	@FindBy(id = "btnDelete")
 	public WebElement deleteButton;
 	
 	@FindBy (id = "dialogDeleteBtn")
 	public WebElement confirmDeleteBtn;
 	
+	public boolean isTableDisplayed() {
+		return resultTable.isDisplayed();
+	}
 	
-	
-	
+	public List<Map<String, String>> getFirstNameFromTable(){
+		List<Map<String, String>> uiFirstNames = new ArrayList<>();
+		for(WebElement firstNameRow:firstNameInTable) {
+			Map<String, String> mapData = new LinkedHashMap<>();
+			String tableName = firstNameRow.getText();
+			mapData.put("emp_firstname", tableName);
+			uiFirstNames.add(mapData);
+		}
+		return uiFirstNames;
+	}
+		
 	
 	public EmployeeListPage() {
 		PageFactory.initElements(driver, this);
