@@ -1,95 +1,87 @@
-$(document).ready(function() {var formatter = new CucumberHTML.DOMFormatter($('.cucumber-report'));formatter.uri("file:src/test/resources/features/jobtitlesValidation.feature");
+$(document).ready(function() {var formatter = new CucumberHTML.DOMFormatter($('.cucumber-report'));formatter.uri("file:src/test/resources/features/APIWorkFlow.feature");
 formatter.feature({
-  "name": "Job Title validations against DB",
+  "name": "Syntax HRMS API Workflow",
+  "description": "  Description: This feature file tests Syntax HRMS APIWorkflow",
+  "keyword": "Feature",
+  "tags": [
+    {
+      "name": "@APIWorkflow"
+    }
+  ]
+});
+formatter.background({
+  "name": "",
   "description": "",
-  "keyword": "Feature"
+  "keyword": "Background"
+});
+formatter.step({
+  "name": "a JWT is generated",
+  "keyword": "Given "
+});
+formatter.match({
+  "location": "com.hrms.API.Final.steps.GenerateTokenSteps.a_JWT_is_generated()"
+});
+formatter.result({
+  "status": "passed"
 });
 formatter.scenario({
-  "name": "Job Title validations against DB",
+  "name": "Creating an employee",
   "description": "",
   "keyword": "Scenario",
   "tags": [
     {
-      "name": "@jtValidation"
+      "name": "@APIWorkflow"
     }
   ]
 });
-formatter.before({
-  "status": "passed"
-});
 formatter.step({
-  "name": "login with valid credentials",
-  "keyword": "When "
+  "name": "a request is prepared to create an employee",
+  "keyword": "Given "
 });
 formatter.match({
-  "location": "com.hrms.stepDefinitions.LoginStepDefinitions.login_with_valid_credentials()"
+  "location": "com.hrms.API.Final.steps.APIFinalSteps.a_request_is_prepared_to_create_an_employee()"
 });
 formatter.result({
   "status": "passed"
 });
 formatter.step({
-  "name": "verify the dashboard logo is displayed",
+  "name": "a POST call is made to create an employee",
+  "keyword": "When "
+});
+formatter.match({
+  "location": "com.hrms.API.Final.steps.APIFinalSteps.a_POST_call_is_made_to_create_an_employee()"
+});
+formatter.result({
+  "status": "passed"
+});
+formatter.step({
+  "name": "the status code for creating employee is 201",
   "keyword": "Then "
 });
 formatter.match({
-  "location": "com.hrms.stepDefinitions.LoginStepDefinitions.verify_the_dashboard_logo_is_displayed()"
+  "location": "com.hrms.API.Final.steps.APIFinalSteps.the_status_code_for_creating_employee_is(java.lang.Integer)"
 });
 formatter.result({
   "status": "passed"
 });
 formatter.step({
-  "name": "navigate to job titles tab",
-  "keyword": "When "
-});
-formatter.match({
-  "location": "com.hrms.stepDefinitions.JobTitlesDBStepDefinitions.navigate_to_job_titles_tab()"
-});
-formatter.result({
-  "status": "passed"
-});
-formatter.step({
-  "name": "verify job title table is displayed",
+  "name": "the employee is created",
   "keyword": "And "
 });
 formatter.match({
-  "location": "com.hrms.stepDefinitions.JobTitlesDBStepDefinitions.verify_job_title_table_is_displayed()"
+  "location": "com.hrms.API.Final.steps.APIFinalSteps.the_employee_is_created()"
 });
 formatter.result({
   "status": "passed"
 });
 formatter.step({
-  "name": "get all job title from the table",
-  "keyword": "When "
+  "name": "the employee ID is stored as a global variable to be used for other calls",
+  "keyword": "And "
 });
 formatter.match({
-  "location": "com.hrms.stepDefinitions.JobTitlesDBStepDefinitions.get_all_job_title_from_the_table()"
+  "location": "com.hrms.API.Final.steps.APIFinalSteps.the_employee_ID_is_stored_as_a_global_variable_to_be_used_for_other_calls()"
 });
 formatter.result({
-  "status": "passed"
-});
-formatter.step({
-  "name": "get all job title from the DB",
-  "keyword": "Then "
-});
-formatter.match({
-  "location": "com.hrms.stepDefinitions.DBStepDefinitions.get_all_job_title_from_the_DB()"
-});
-formatter.result({
-  "status": "passed"
-});
-formatter.step({
-  "name": "validate job titles from UI against DB",
-  "keyword": "Then "
-});
-formatter.match({
-  "location": "com.hrms.stepDefinitions.JobTitlesDBStepDefinitions.validate_job_titles_from_UI_against_DB()"
-});
-formatter.result({
-  "error_message": "java.lang.AssertionError: expected:\u003c[{job_title\u003dAccountant}, {job_title\u003dAPI Tester}, {job_title\u003dApplication Developer}, {job_title\u003dAutomation Engineer}, {job_title\u003dCEO}, {job_title\u003dChief Financial Officer}, {job_title\u003dCloud Architect}, {job_title\u003dCloud Consultant}, {job_title\u003dCloud Product and Project Manager}, {job_title\u003dController}, {job_title\u003dCTO}, {job_title\u003dData Quality Manager}, {job_title\u003dDatabase Administrator}, {job_title\u003dDeveloper}, {job_title\u003dFreelancer}, {job_title\u003dGraphic Designer}, {job_title\u003dInstructor}, {job_title\u003dIT Analyst}, {job_title\u003dIT Support Manager}, {job_title\u003dJr Production Manager}, {job_title\u003dJr Sales Manager}, {job_title\u003dNetwork Administrator}, {job_title\u003dProduction Manager}, {job_title\u003dQA Tester}, {job_title\u003dSales\u0026Marketing Manager}, {job_title\u003dSales\u0026Marketing Manager}, {job_title\u003dSr Production Manager}]\u003e but was:\u003c[{job_title\u003dAccountant}, {job_title\u003dAPI Tester}, {job_title\u003dApplication Developer}, {job_title\u003dAutomation Engineer}, {job_title\u003dCEO}, {job_title\u003dChief Financial Officer}, {job_title\u003dCloud Architect}, {job_title\u003dCloud Consultant}, {job_title\u003dCloud Product and Project Manager}, {job_title\u003dController}, {job_title\u003dCTO}, {job_title\u003dData Quality Manager}, {job_title\u003dDatabase Administrator}, {job_title\u003dDeveloper}, {job_title\u003dGraphic Designer}, {job_title\u003dInstructor}, {job_title\u003dIT Analyst}, {job_title\u003dIT Support Manager}, {job_title\u003dJr Production Manager}, {job_title\u003dJr Sales Manager}, {job_title\u003dNetwork Administrator}, {job_title\u003dProduction Manager}, {job_title\u003dQA Tester}, {job_title\u003dSr Production Manager}]\u003e\n\tat org.junit.Assert.fail(Assert.java:89)\n\tat org.junit.Assert.failNotEquals(Assert.java:835)\n\tat org.junit.Assert.assertEquals(Assert.java:120)\n\tat org.junit.Assert.assertEquals(Assert.java:146)\n\tat com.hrms.stepDefinitions.JobTitlesDBStepDefinitions.validate_job_titles_from_UI_against_DB(JobTitlesDBStepDefinitions.java:33)\n\tat ✽.validate job titles from UI against DB(file:///Users/alexandrrudenko/eclipse-workspace/CucumberFramework/src/test/resources/features/jobtitlesValidation.feature:10)\n",
-  "status": "failed"
-});
-formatter.embedding("image/png", "embedded0.png", "Job Title validations against DB");
-formatter.after({
   "status": "passed"
 });
 });
