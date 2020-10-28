@@ -11,8 +11,8 @@
         "steps": [
           {
             "result": {
-              "duration": 5318000000,
-              "status": "passed"
+              "duration": 3000000,
+              "status": "skipped"
             },
             "line": 7,
             "name": "a JWT is generated",
@@ -24,7 +24,7 @@
         ]
       },
       {
-        "start_timestamp": "2020-10-25T19:01:02.032Z",
+        "start_timestamp": "2020-10-28T00:22:04.844Z",
         "line": 9,
         "name": "Creating an employee",
         "description": "",
@@ -34,8 +34,8 @@
         "steps": [
           {
             "result": {
-              "duration": 4000000,
-              "status": "passed"
+              "duration": 3000000,
+              "status": "skipped"
             },
             "line": 10,
             "name": "a request is prepared to create an employee",
@@ -46,8 +46,8 @@
           },
           {
             "result": {
-              "duration": 2000000,
-              "status": "passed"
+              "duration": 1000000,
+              "status": "skipped"
             },
             "line": 11,
             "name": "a POST call is made to create an employee",
@@ -58,8 +58,8 @@
           },
           {
             "result": {
-              "duration": 1000000,
-              "status": "passed"
+              "duration": 2000000,
+              "status": "skipped"
             },
             "line": 12,
             "name": "the status code for creating employee is 201",
@@ -70,14 +70,14 @@
                   "offset": 41
                 }
               ],
-              "location": "com.hrms.API.Final.steps.APIFinalSteps.the_status_code_for_creating_employee_is(java.lang.Integer)"
+              "location": "com.hrms.API.Final.steps.APIFinalSteps.the_status_code_for_creating_employee_is(int)"
             },
             "keyword": "Then "
           },
           {
             "result": {
-              "duration": 2000000,
-              "status": "passed"
+              "duration": 1000000,
+              "status": "skipped"
             },
             "line": 13,
             "name": "the employee is created",
@@ -88,13 +88,218 @@
           },
           {
             "result": {
-              "duration": 2000000,
-              "status": "passed"
+              "duration": 1000000,
+              "status": "skipped"
             },
             "line": 14,
             "name": "the employee ID is stored as a global variable to be used for other calls",
             "match": {
               "location": "com.hrms.API.Final.steps.APIFinalSteps.the_employee_ID_is_stored_as_a_global_variable_to_be_used_for_other_calls()"
+            },
+            "keyword": "And "
+          }
+        ],
+        "tags": [
+          {
+            "name": "@APIWorkflow"
+          }
+        ]
+      },
+      {
+        "line": 6,
+        "name": "",
+        "description": "",
+        "type": "background",
+        "keyword": "Background",
+        "steps": [
+          {
+            "result": {
+              "duration": 1000000,
+              "status": "skipped"
+            },
+            "line": 7,
+            "name": "a JWT is generated",
+            "match": {
+              "location": "com.hrms.API.Final.steps.GenerateTokenSteps.a_JWT_is_generated()"
+            },
+            "keyword": "Given "
+          }
+        ]
+      },
+      {
+        "start_timestamp": "2020-10-28T00:22:05.057Z",
+        "line": 16,
+        "name": "Retrieving created employee",
+        "description": "",
+        "id": "syntax-hrms-api-workflow;retrieving-created-employee",
+        "type": "scenario",
+        "keyword": "Scenario",
+        "steps": [
+          {
+            "result": {
+              "duration": 5000000,
+              "status": "skipped"
+            },
+            "line": 17,
+            "name": "a request is prepared to retrieve the created employee",
+            "match": {
+              "location": "com.hrms.API.Final.steps.APIFinalSteps.a_request_is_prepared_to_retrieve_the_created_employee()"
+            },
+            "keyword": "Given "
+          },
+          {
+            "result": {
+              "status": "skipped"
+            },
+            "line": 18,
+            "name": "a GET call is made to retrieve the created employee",
+            "match": {
+              "location": "com.hrms.API.Final.steps.APIFinalSteps.a_GET_call_is_made_to_retrieve_the_created_employee()"
+            },
+            "keyword": "When "
+          },
+          {
+            "result": {
+              "duration": 1000000,
+              "status": "skipped"
+            },
+            "line": 19,
+            "name": "the status code for retrieven the created employee is 200",
+            "match": {
+              "arguments": [
+                {
+                  "val": "200",
+                  "offset": 54
+                }
+              ],
+              "location": "com.hrms.API.Final.steps.APIFinalSteps.the_status_code_for_retrieven_the_created_employee_is(java.lang.Integer)"
+            },
+            "keyword": "Then "
+          },
+          {
+            "result": {
+              "duration": 1000000,
+              "status": "skipped"
+            },
+            "line": 20,
+            "name": "the retrieved employee ID matches the globally stored employee ID",
+            "match": {
+              "location": "com.hrms.API.Final.steps.APIFinalSteps.the_retrieved_employee_ID_matches_the_globally_stored_employee_ID()"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 1000000,
+              "status": "skipped"
+            },
+            "line": 21,
+            "name": "the retrieved data matches the data used to create an employee",
+            "match": {
+              "location": "com.hrms.API.Final.steps.APIFinalSteps.the_retrieved_data_matches_the_data_used_to_create_an_employee()"
+            },
+            "keyword": "And "
+          }
+        ],
+        "tags": [
+          {
+            "name": "@APIWorkflow"
+          }
+        ]
+      },
+      {
+        "line": 6,
+        "name": "",
+        "description": "",
+        "type": "background",
+        "keyword": "Background",
+        "steps": [
+          {
+            "result": {
+              "duration": 1000000,
+              "status": "skipped"
+            },
+            "line": 7,
+            "name": "a JWT is generated",
+            "match": {
+              "location": "com.hrms.API.Final.steps.GenerateTokenSteps.a_JWT_is_generated()"
+            },
+            "keyword": "Given "
+          }
+        ]
+      },
+      {
+        "start_timestamp": "2020-10-28T00:22:05.083Z",
+        "line": 23,
+        "name": "Retrieving all employees and verifying that created employee details display in the response",
+        "description": "",
+        "id": "syntax-hrms-api-workflow;retrieving-all-employees-and-verifying-that-created-employee-details-display-in-the-response",
+        "type": "scenario",
+        "keyword": "Scenario",
+        "steps": [
+          {
+            "result": {
+              "duration": 4000000,
+              "status": "skipped"
+            },
+            "line": 24,
+            "name": "a request is prepared to retrieve all employees",
+            "match": {
+              "location": "com.hrms.API.Final.steps.APIFinalSteps.a_request_is_prepared_to_retrieve_all_employees()"
+            },
+            "keyword": "Given "
+          },
+          {
+            "result": {
+              "duration": 1000000,
+              "status": "skipped"
+            },
+            "line": 25,
+            "name": "a GET call is made to retrieve all employees",
+            "match": {
+              "location": "com.hrms.API.Final.steps.APIFinalSteps.a_GET_call_is_made_to_retrieve_all_employees()"
+            },
+            "keyword": "When "
+          },
+          {
+            "result": {
+              "duration": 1000000,
+              "status": "skipped"
+            },
+            "line": 26,
+            "name": "the status code for retrieving all employees is 200",
+            "match": {
+              "arguments": [
+                {
+                  "val": "200",
+                  "offset": 48
+                }
+              ],
+              "location": "com.hrms.API.Final.steps.APIFinalSteps.the_status_code_for_retrieving_all_employees_is(java.lang.Integer)"
+            },
+            "keyword": "Then "
+          },
+          {
+            "result": {
+              "duration": 1000000,
+              "status": "skipped"
+            },
+            "line": 27,
+            "name": "the retrieved data contains the globally stored employee ID",
+            "match": {
+              "location": "com.hrms.API.Final.steps.APIFinalSteps.the_retrieved_data_contains_the_globally_stored_employee_ID()"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 1000000,
+              "status": "skipped"
+            },
+            "line": 28,
+            "name": "the retrieved data matches the data that was used to create an employee",
+            "match": {
+              "location": "com.hrms.API.Final.steps.APIFinalSteps.the_retrieved_data_matches_the_data_that_was_used_to_create_an_employee()"
             },
             "keyword": "And "
           }
