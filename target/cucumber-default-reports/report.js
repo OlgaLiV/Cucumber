@@ -1,11 +1,79 @@
-$(document).ready(function() {var formatter = new CucumberHTML.DOMFormatter($('.cucumber-report'));formatter.uri("file:src/test/resources/features/APIWorkFlow.feature");
+$(document).ready(function() {var formatter = new CucumberHTML.DOMFormatter($('.cucumber-report'));formatter.uri("file:src/test/resources/features/createEmployees.feature");
 formatter.feature({
-  "name": "Syntax HRMS API Workflow",
-  "description": "  Description: This feature file tests Syntax HRMS APIWorkflow",
+  "name": "Creating employees",
+  "description": "  Description: This feature creates employees",
   "keyword": "Feature",
   "tags": [
     {
-      "name": "@APIWorkflow"
+      "name": "@CreateEmployees"
+    }
+  ]
+});
+formatter.scenarioOutline({
+  "name": "Creating employees",
+  "description": "",
+  "keyword": "Scenario Outline"
+});
+formatter.step({
+  "name": "a request is prepared to create employees",
+  "keyword": "Given "
+});
+formatter.step({
+  "name": "employee data provided is \"\u003cemployeeFirstName\u003e\", \"\u003cemployeeLastName\u003e\", \"\u003cemployeeMiddleName\u003e\", \"\u003cemployeeGender\u003e\", \"\u003cemployeeBirthday\u003e\", \"\u003cemployeeJobStatus\u003e\", \"\u003cemployeeJobTitle\u003e\"",
+  "keyword": "When "
+});
+formatter.step({
+  "name": "employees are created",
+  "keyword": "Then "
+});
+formatter.examples({
+  "name": "",
+  "description": "",
+  "keyword": "Examples",
+  "rows": [
+    {
+      "cells": [
+        "employeeFirstName",
+        "employeeLastName",
+        "employeeMiddleName",
+        "employeeGender",
+        "employeeBirthday",
+        "employeeJobStatus",
+        "employeeJobTitle"
+      ]
+    },
+    {
+      "cells": [
+        "Dog",
+        "Dog",
+        "Dog",
+        "F",
+        "2005-09-30",
+        "Employee",
+        "Cloud Architect"
+      ]
+    },
+    {
+      "cells": [
+        "Cat",
+        "Cat",
+        "Cat",
+        "M",
+        "2017-09-17",
+        "Independent contractor",
+        "CEO"
+      ]
+    },
+    {
+      "cells": [
+        "Monkey",
+        "Monkey",
+        "Monkey",
+        "M",
+        "2000-01-10",
+        "Super Contractor",
+        "IT Analyst"
+      ]
     }
   ]
 });
@@ -22,67 +90,47 @@ formatter.match({
   "location": "com.hrms.API.Final.steps.GenerateTokenSteps.a_JWT_is_generated()"
 });
 formatter.result({
-  "status": "skipped"
+  "status": "passed"
 });
 formatter.scenario({
-  "name": "Creating an employee",
+  "name": "Creating employees",
   "description": "",
-  "keyword": "Scenario",
+  "keyword": "Scenario Outline",
   "tags": [
     {
-      "name": "@APIWorkflow"
+      "name": "@CreateEmployees"
     }
   ]
 });
 formatter.step({
-  "name": "a request is prepared to create an employee",
+  "name": "a request is prepared to create employees",
   "keyword": "Given "
 });
 formatter.match({
-  "location": "com.hrms.API.Final.steps.APIFinalSteps.a_request_is_prepared_to_create_an_employee()"
+  "location": "com.hrms.API.Final.steps.CreateEmployees.a_request_is_prepared_to_create_employees()"
 });
 formatter.result({
-  "status": "skipped"
+  "status": "passed"
 });
 formatter.step({
-  "name": "a POST call is made to create an employee",
+  "name": "employee data provided is \"Dog\", \"Dog\", \"Dog\", \"F\", \"2005-09-30\", \"Employee\", \"Cloud Architect\"",
   "keyword": "When "
 });
 formatter.match({
-  "location": "com.hrms.API.Final.steps.APIFinalSteps.a_POST_call_is_made_to_create_an_employee()"
+  "location": "com.hrms.API.Final.steps.CreateEmployees.employee_data_provided_is(java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String)"
 });
 formatter.result({
-  "status": "skipped"
+  "status": "passed"
 });
 formatter.step({
-  "name": "the status code for creating employee is 201",
+  "name": "employees are created",
   "keyword": "Then "
 });
 formatter.match({
-  "location": "com.hrms.API.Final.steps.APIFinalSteps.the_status_code_for_creating_employee_is(int)"
+  "location": "com.hrms.API.Final.steps.CreateEmployees.employees_are_created()"
 });
 formatter.result({
-  "status": "skipped"
-});
-formatter.step({
-  "name": "the employee is created",
-  "keyword": "And "
-});
-formatter.match({
-  "location": "com.hrms.API.Final.steps.APIFinalSteps.the_employee_is_created()"
-});
-formatter.result({
-  "status": "skipped"
-});
-formatter.step({
-  "name": "the employee ID is stored as a global variable to be used for other calls",
-  "keyword": "And "
-});
-formatter.match({
-  "location": "com.hrms.API.Final.steps.APIFinalSteps.the_employee_ID_is_stored_as_a_global_variable_to_be_used_for_other_calls()"
-});
-formatter.result({
-  "status": "skipped"
+  "status": "passed"
 });
 formatter.background({
   "name": "",
@@ -97,67 +145,47 @@ formatter.match({
   "location": "com.hrms.API.Final.steps.GenerateTokenSteps.a_JWT_is_generated()"
 });
 formatter.result({
-  "status": "skipped"
+  "status": "passed"
 });
 formatter.scenario({
-  "name": "Retrieving created employee",
+  "name": "Creating employees",
   "description": "",
-  "keyword": "Scenario",
+  "keyword": "Scenario Outline",
   "tags": [
     {
-      "name": "@APIWorkflow"
+      "name": "@CreateEmployees"
     }
   ]
 });
 formatter.step({
-  "name": "a request is prepared to retrieve the created employee",
+  "name": "a request is prepared to create employees",
   "keyword": "Given "
 });
 formatter.match({
-  "location": "com.hrms.API.Final.steps.APIFinalSteps.a_request_is_prepared_to_retrieve_the_created_employee()"
+  "location": "com.hrms.API.Final.steps.CreateEmployees.a_request_is_prepared_to_create_employees()"
 });
 formatter.result({
-  "status": "skipped"
+  "status": "passed"
 });
 formatter.step({
-  "name": "a GET call is made to retrieve the created employee",
+  "name": "employee data provided is \"Cat\", \"Cat\", \"Cat\", \"M\", \"2017-09-17\", \"Independent contractor\", \"CEO\"",
   "keyword": "When "
 });
 formatter.match({
-  "location": "com.hrms.API.Final.steps.APIFinalSteps.a_GET_call_is_made_to_retrieve_the_created_employee()"
+  "location": "com.hrms.API.Final.steps.CreateEmployees.employee_data_provided_is(java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String)"
 });
 formatter.result({
-  "status": "skipped"
+  "status": "passed"
 });
 formatter.step({
-  "name": "the status code for retrieven the created employee is 200",
+  "name": "employees are created",
   "keyword": "Then "
 });
 formatter.match({
-  "location": "com.hrms.API.Final.steps.APIFinalSteps.the_status_code_for_retrieven_the_created_employee_is(java.lang.Integer)"
+  "location": "com.hrms.API.Final.steps.CreateEmployees.employees_are_created()"
 });
 formatter.result({
-  "status": "skipped"
-});
-formatter.step({
-  "name": "the retrieved employee ID matches the globally stored employee ID",
-  "keyword": "And "
-});
-formatter.match({
-  "location": "com.hrms.API.Final.steps.APIFinalSteps.the_retrieved_employee_ID_matches_the_globally_stored_employee_ID()"
-});
-formatter.result({
-  "status": "skipped"
-});
-formatter.step({
-  "name": "the retrieved data matches the data used to create an employee",
-  "keyword": "And "
-});
-formatter.match({
-  "location": "com.hrms.API.Final.steps.APIFinalSteps.the_retrieved_data_matches_the_data_used_to_create_an_employee()"
-});
-formatter.result({
-  "status": "skipped"
+  "status": "passed"
 });
 formatter.background({
   "name": "",
@@ -172,66 +200,46 @@ formatter.match({
   "location": "com.hrms.API.Final.steps.GenerateTokenSteps.a_JWT_is_generated()"
 });
 formatter.result({
-  "status": "skipped"
+  "status": "passed"
 });
 formatter.scenario({
-  "name": "Retrieving all employees and verifying that created employee details display in the response",
+  "name": "Creating employees",
   "description": "",
-  "keyword": "Scenario",
+  "keyword": "Scenario Outline",
   "tags": [
     {
-      "name": "@APIWorkflow"
+      "name": "@CreateEmployees"
     }
   ]
 });
 formatter.step({
-  "name": "a request is prepared to retrieve all employees",
+  "name": "a request is prepared to create employees",
   "keyword": "Given "
 });
 formatter.match({
-  "location": "com.hrms.API.Final.steps.APIFinalSteps.a_request_is_prepared_to_retrieve_all_employees()"
+  "location": "com.hrms.API.Final.steps.CreateEmployees.a_request_is_prepared_to_create_employees()"
 });
 formatter.result({
-  "status": "skipped"
+  "status": "passed"
 });
 formatter.step({
-  "name": "a GET call is made to retrieve all employees",
+  "name": "employee data provided is \"Monkey\", \"Monkey\", \"Monkey\", \"M\", \"2000-01-10\", \"Super Contractor\", \"IT Analyst\"",
   "keyword": "When "
 });
 formatter.match({
-  "location": "com.hrms.API.Final.steps.APIFinalSteps.a_GET_call_is_made_to_retrieve_all_employees()"
+  "location": "com.hrms.API.Final.steps.CreateEmployees.employee_data_provided_is(java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String)"
 });
 formatter.result({
-  "status": "skipped"
+  "status": "passed"
 });
 formatter.step({
-  "name": "the status code for retrieving all employees is 200",
+  "name": "employees are created",
   "keyword": "Then "
 });
 formatter.match({
-  "location": "com.hrms.API.Final.steps.APIFinalSteps.the_status_code_for_retrieving_all_employees_is(java.lang.Integer)"
+  "location": "com.hrms.API.Final.steps.CreateEmployees.employees_are_created()"
 });
 formatter.result({
-  "status": "skipped"
-});
-formatter.step({
-  "name": "the retrieved data contains the globally stored employee ID",
-  "keyword": "And "
-});
-formatter.match({
-  "location": "com.hrms.API.Final.steps.APIFinalSteps.the_retrieved_data_contains_the_globally_stored_employee_ID()"
-});
-formatter.result({
-  "status": "skipped"
-});
-formatter.step({
-  "name": "the retrieved data matches the data that was used to create an employee",
-  "keyword": "And "
-});
-formatter.match({
-  "location": "com.hrms.API.Final.steps.APIFinalSteps.the_retrieved_data_matches_the_data_that_was_used_to_create_an_employee()"
-});
-formatter.result({
-  "status": "skipped"
+  "status": "passed"
 });
 });

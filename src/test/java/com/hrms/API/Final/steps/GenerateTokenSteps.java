@@ -7,22 +7,33 @@ import io.restassured.specification.RequestSpecification;
 
 import static io.restassured.RestAssured.*;
 
+import com.hrms.utils.APICommonMethods;
+import com.hrms.utils.APIConstants;
+import com.hrms.utils.CommonMethods;
+
 public class GenerateTokenSteps {
-	String baseURI = RestAssured.baseURI = "http://18.232.148.34/syntaxapi/api";
-	static String token;
-	
+	// String baseURI = RestAssured.baseURI = "http://18.232.148.34/syntaxapi/api";
+	public static String token;
+
+	/**
+	 * we authenticate with the user email and password and request a token with the
+	 * proper endpoint and you send it with all your requests
+	 */
 	@Given("a JWT is generated")
 	public void a_JWT_is_generated() {
-		/**Preparing request for generate token*/
-		RequestSpecification generateTokenRequest = given().header("Content-Type", "application/json").body("{\n" + 
-				"  \"email\": \"olga@gmail.com\",\n" + 
-				"  \"password\": \"Olga!123456\"\n" + 
-				"}");
-		/**Storing response into generateTokenResponse*/
-		Response generateTokenResponse = generateTokenRequest.when().post("/generateToken.php");
-		/**Optional print response*/
+		/** Preparing request for generate token */
+		RequestSpecification generateTokenRequest = APICommonMethods
+				.generateTokenRequest(CommonMethods.readJson(APIConstants.GENERATE_TOKEN_JSON));
+
+		/** Storing response into generateTokenResponse */
+		Response generateTokenResponse = generateTokenRequest.when().post(APIConstants.GENERATE_TOKEN_URI);
+
+		/** Optional print response */
 		generateTokenResponse.prettyPrint();
-		/**Storing token as a static global variable that will be used for other calls*/
+
+		/**
+		 * Storing token as a static global variable that will be used for other calls
+		 */
 		token = "Bearer " + generateTokenResponse.jsonPath().getString("token");
 
 	}

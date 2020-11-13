@@ -9,6 +9,7 @@ import com.hrms.pages.LoginPageElements;
 import com.hrms.pages.PersonalDetalesPage;
 import com.hrms.pages.PimPage;
 import com.hrms.pages.SkillsPageElements;
+import com.hrms.utils.APICommonMethods;
 
 public class PageInitializer extends BaseClass {
 	protected static LoginPageElements login;
@@ -20,6 +21,7 @@ public class PageInitializer extends BaseClass {
 	protected static EmergencyContactsPage emgCont;
 	protected static SkillsPageElements skillsPage;
 	protected static JobTitlesPageElements jobTitlesPage;
+	protected static APICommonMethods apiMethods;
 	
 
 	public static void initializePageObjects() {
@@ -33,6 +35,8 @@ public class PageInitializer extends BaseClass {
 		emgCont = new EmergencyContactsPage();
 		skillsPage = new SkillsPageElements();
 		jobTitlesPage = new JobTitlesPageElements();
+		apiMethods = new APICommonMethods();
+		
 	}
 
 }
