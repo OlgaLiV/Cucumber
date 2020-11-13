@@ -14,7 +14,8 @@ import io.cucumber.junit.CucumberOptions;
 				 strict = false,// when set as true will fail execution when underfined step is found
 				 plugin = {"pretty", // pretty - print out steps in console		
 							"html:target/cucumber-default-reports" ,//generate default html report
-							"rerun:target/FailedTests.txt"} // generate txt file only with failed tests
+							"rerun:target/FailedTests.txt",
+							"json:target/cucumber.json"} // generate txt file only with failed tests
 				) 
 				
 
