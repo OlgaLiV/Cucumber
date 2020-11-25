@@ -1,81 +1,245 @@
-$(document).ready(function() {var formatter = new CucumberHTML.DOMFormatter($('.cucumber-report'));formatter.uri("file:src/test/resources/features/Login.feature");
+$(document).ready(function() {var formatter = new CucumberHTML.DOMFormatter($('.cucumber-report'));formatter.uri("file:src/test/resources/features/createEmployees.feature");
 formatter.feature({
-  "name": "Login Functionality",
-  "description": "",
-  "keyword": "Feature"
-});
-formatter.scenario({
-  "name": "Login with valid credentials",
-  "description": "",
-  "keyword": "Scenario",
+  "name": "Creating employees",
+  "description": "  Description: This feature creates employees",
+  "keyword": "Feature",
   "tags": [
     {
-      "name": "@smoke"
+      "name": "@CreateEmployees"
     }
   ]
 });
-formatter.before({
-  "status": "passed"
+formatter.scenarioOutline({
+  "name": "Creating employees",
+  "description": "",
+  "keyword": "Scenario Outline"
 });
 formatter.step({
-  "name": "login with valid credentials",
+  "name": "a request is prepared to create employees",
+  "keyword": "Given "
+});
+formatter.step({
+  "name": "employee data provided is \"\u003cemployeeFirstName\u003e\", \"\u003cemployeeLastName\u003e\", \"\u003cemployeeMiddleName\u003e\", \"\u003cemployeeGender\u003e\", \"\u003cemployeeBirthday\u003e\", \"\u003cemployeeJobStatus\u003e\", \"\u003cemployeeJobTitle\u003e\"",
   "keyword": "When "
 });
-formatter.match({
-  "location": "com.hrms.stepDefinitions.LoginStepDefinitions.login_with_valid_credentials()"
-});
-formatter.result({
-  "status": "passed"
-});
 formatter.step({
-  "name": "verify the dashboard logo is displayed",
+  "name": "employees are created",
   "keyword": "Then "
 });
-formatter.match({
-  "location": "com.hrms.stepDefinitions.LoginStepDefinitions.verify_the_dashboard_logo_is_displayed()"
-});
-formatter.result({
-  "status": "passed"
-});
-formatter.embedding("image/png", "embedded0.png", "Login with valid credentials");
-formatter.after({
-  "status": "passed"
-});
-formatter.scenario({
-  "name": "Login with invalid credentials",
+formatter.examples({
+  "name": "",
   "description": "",
-  "keyword": "Scenario",
-  "tags": [
+  "keyword": "Examples",
+  "rows": [
     {
-      "name": "@smoke"
+      "cells": [
+        "employeeFirstName",
+        "employeeLastName",
+        "employeeMiddleName",
+        "employeeGender",
+        "employeeBirthday",
+        "employeeJobStatus",
+        "employeeJobTitle"
+      ]
+    },
+    {
+      "cells": [
+        "Dog",
+        "Dog",
+        "Dog",
+        "F",
+        "2005-09-30",
+        "Employee",
+        "Cloud Architect"
+      ]
+    },
+    {
+      "cells": [
+        "Cat",
+        "Cat",
+        "Cat",
+        "M",
+        "2017-09-17",
+        "Independent contractor",
+        "CEO"
+      ]
+    },
+    {
+      "cells": [
+        "Monkey",
+        "Monkey",
+        "Monkey",
+        "M",
+        "2000-01-10",
+        "Super Contractor",
+        "IT Analyst"
+      ]
     }
   ]
 });
-formatter.before({
+formatter.background({
+  "name": "",
+  "description": "",
+  "keyword": "Background"
+});
+formatter.step({
+  "name": "a JWT is generated",
+  "keyword": "Given "
+});
+formatter.match({
+  "location": "com.hrms.API.Final.steps.GenerateTokenSteps.a_JWT_is_generated()"
+});
+formatter.result({
+  "status": "passed"
+});
+formatter.scenario({
+  "name": "Creating employees",
+  "description": "",
+  "keyword": "Scenario Outline",
+  "tags": [
+    {
+      "name": "@CreateEmployees"
+    }
+  ]
+});
+formatter.step({
+  "name": "a request is prepared to create employees",
+  "keyword": "Given "
+});
+formatter.match({
+  "location": "com.hrms.API.Final.steps.CreateEmployees.a_request_is_prepared_to_create_employees()"
+});
+formatter.result({
   "status": "passed"
 });
 formatter.step({
-  "name": "login with invalid credentials",
+  "name": "employee data provided is \"Dog\", \"Dog\", \"Dog\", \"F\", \"2005-09-30\", \"Employee\", \"Cloud Architect\"",
   "keyword": "When "
 });
 formatter.match({
-  "location": "com.hrms.stepDefinitions.LoginStepDefinitions.login_with_invalid_credentials()"
+  "location": "com.hrms.API.Final.steps.CreateEmployees.employee_data_provided_is(java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String)"
 });
 formatter.result({
   "status": "passed"
 });
 formatter.step({
-  "name": "verify the error message",
+  "name": "employees are created",
   "keyword": "Then "
 });
 formatter.match({
-  "location": "com.hrms.stepDefinitions.LoginStepDefinitions.verify_the_error_message()"
+  "location": "com.hrms.API.Final.steps.CreateEmployees.employees_are_created()"
 });
 formatter.result({
   "status": "passed"
 });
-formatter.embedding("image/png", "embedded1.png", "Login with invalid credentials");
-formatter.after({
+formatter.background({
+  "name": "",
+  "description": "",
+  "keyword": "Background"
+});
+formatter.step({
+  "name": "a JWT is generated",
+  "keyword": "Given "
+});
+formatter.match({
+  "location": "com.hrms.API.Final.steps.GenerateTokenSteps.a_JWT_is_generated()"
+});
+formatter.result({
+  "status": "passed"
+});
+formatter.scenario({
+  "name": "Creating employees",
+  "description": "",
+  "keyword": "Scenario Outline",
+  "tags": [
+    {
+      "name": "@CreateEmployees"
+    }
+  ]
+});
+formatter.step({
+  "name": "a request is prepared to create employees",
+  "keyword": "Given "
+});
+formatter.match({
+  "location": "com.hrms.API.Final.steps.CreateEmployees.a_request_is_prepared_to_create_employees()"
+});
+formatter.result({
+  "status": "passed"
+});
+formatter.step({
+  "name": "employee data provided is \"Cat\", \"Cat\", \"Cat\", \"M\", \"2017-09-17\", \"Independent contractor\", \"CEO\"",
+  "keyword": "When "
+});
+formatter.match({
+  "location": "com.hrms.API.Final.steps.CreateEmployees.employee_data_provided_is(java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String)"
+});
+formatter.result({
+  "status": "passed"
+});
+formatter.step({
+  "name": "employees are created",
+  "keyword": "Then "
+});
+formatter.match({
+  "location": "com.hrms.API.Final.steps.CreateEmployees.employees_are_created()"
+});
+formatter.result({
+  "status": "passed"
+});
+formatter.background({
+  "name": "",
+  "description": "",
+  "keyword": "Background"
+});
+formatter.step({
+  "name": "a JWT is generated",
+  "keyword": "Given "
+});
+formatter.match({
+  "location": "com.hrms.API.Final.steps.GenerateTokenSteps.a_JWT_is_generated()"
+});
+formatter.result({
+  "status": "passed"
+});
+formatter.scenario({
+  "name": "Creating employees",
+  "description": "",
+  "keyword": "Scenario Outline",
+  "tags": [
+    {
+      "name": "@CreateEmployees"
+    }
+  ]
+});
+formatter.step({
+  "name": "a request is prepared to create employees",
+  "keyword": "Given "
+});
+formatter.match({
+  "location": "com.hrms.API.Final.steps.CreateEmployees.a_request_is_prepared_to_create_employees()"
+});
+formatter.result({
+  "status": "passed"
+});
+formatter.step({
+  "name": "employee data provided is \"Monkey\", \"Monkey\", \"Monkey\", \"M\", \"2000-01-10\", \"Super Contractor\", \"IT Analyst\"",
+  "keyword": "When "
+});
+formatter.match({
+  "location": "com.hrms.API.Final.steps.CreateEmployees.employee_data_provided_is(java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String)"
+});
+formatter.result({
+  "status": "passed"
+});
+formatter.step({
+  "name": "employees are created",
+  "keyword": "Then "
+});
+formatter.match({
+  "location": "com.hrms.API.Final.steps.CreateEmployees.employees_are_created()"
+});
+formatter.result({
   "status": "passed"
 });
 });
